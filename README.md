@@ -21,7 +21,14 @@ This summary is provided for convenience and does not replace the full [SAM Lice
 
 ## Provenance
 
-The files in `models/` were produced by converting an upstream Meta SAM 3 checkpoint to ONNX without training or fine-tuning by PickNik. The exact checkpoint revision and export commands were not recorded in this repository.
+The files in `models/` are the `*-q4f16.onnx` assets from [jamjamjon/assets, release `sam3`](https://github.com/jamjamjon/assets/releases/tag/sam3), renamed as listed below. They are third-party ONNX exports of Meta's SAM 3 model with q4f16 weight quantization (4-bit weights, float16 activations), produced for the [usls](https://github.com/jamjamjon/usls) project. PickNik performed no training, fine-tuning, or other modification.
+
+| File | Upstream asset | SHA-256 |
+| --- | --- | --- |
+| `sam3_decoder.onnx` | `decoder-q4f16.onnx` | `8496d685a950604626c3e6b972c21f5b4b876b15ce98b9b899875f392947b83c` |
+| `sam3_geometry_encoder.onnx` | `geometry-encoder-q4f16.onnx` | `6717167a4454e063ab71895b5c03d067ce7386437fb489d1484feb2ca3abf741` |
+| `sam3_text_encoder.onnx` | `text-encoder-q4f16.onnx` | `639ba5a9991b012d3290fbba27eb8dbcebdc86ed9f747572d7bea1678317d8d1` |
+| `sam3_vision_encoder.onnx` | `vision-encoder-q4f16.onnx` | `9c00c5db8739f4c0cd0158a916f0e9755e0240bb35abca2934ab308e72cb2d6e` |
 
 ## Package licensing
 
